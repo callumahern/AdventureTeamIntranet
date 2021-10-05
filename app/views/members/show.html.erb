@@ -1,0 +1,20 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+<p id="notice"><%= notice %></p>
+
+<div class="jumbotron">
+  <h1 class="display-4"><%= @member.name %> </h1>
+  <hr class="my-4">
+  <p class="lead"> <%= @member.email %> | <%= @member.role %> | <%= @member.phone %> </p>
+
+  <p class="lead">
+  </br>
+    <%= link_to 'Edit', edit_member_path(@member), class: 'btn btn-secondary' %> |
+    <%= link_to 'Back', members_path, class: 'btn btn-dark' %>   
+  </p>
+</div>
+
+
+
+
+
