@@ -12,22 +12,30 @@
   <% end %>
   </br>
   <div class="field form-group">
-    <%= form.text_field :name, class: 'form-control' %>
+    <%= form.text_field :name, class: 'form-control', placeholder: 'Name' %>
   </div>
   </br>    
   <div class="field form-group">
-    <%= form.text_field :email, class: 'form-control' %>
+    <%= form.text_field :email, class: 'form-control', placeholder: 'Email' %>
   </div>
   </br>
   <div class="field form-group">
-    <%= form.text_field :role, class: 'form-control' %>
+    <%= form.text_field :role, class: 'form-control', placeholder: 'Role' %>
   </div>
   </br>     
   <div class="field form-group">
-    <%= form.text_field :phone, class: 'form-control' %>
+    <%= form.text_field :phone, class: 'form-control', placeholder: 'Contact number' %>
   </div>
   </br>
   <div class="actions">
     <%= form.submit class: 'btn btn-secondary' %>
   </div>
+
+  <div class="field form-group">
+    <% if member.image.attached? %>
+      <%= image_tag member.image, style: 'width: 200px; display: block;' %>
+    <% end %>
+
+    <%= form.label 'Select Photo' %>
+    <%= form.file_field :image, class: 'form-control' %> </br>
 <% end %>

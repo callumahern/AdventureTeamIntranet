@@ -3,14 +3,17 @@
 <p id="notice"><%= notice %></p>
 
 <div class="jumbotron">
-  <h1 class="display-4"><%= @member.name %> </h1>
+  <h1 class="display-4" style="display: inline"><%= @member.name %> </h1>
+  <%= image_tag @member.image, style: 'width: 150px; margin-left: 600px' %>
   <hr class="my-4">
   <p class="lead"> <%= @member.email %> | <%= @member.role %> | <%= @member.phone %> </p>
-
   <p class="lead">
   </br>
     <%= link_to 'Edit', edit_member_path(@member), class: 'btn btn-secondary' %> |
-    <%= link_to 'Back', members_path, class: 'btn btn-dark' %>   
+    <%= link_to 'Back', members_path, class: 'btn btn-dark' %>  
+    </br>
+    <%= link_to 'Remove', @member, class: 'btn btn-danger', style: 'margin-left: 25px; margin-top: 10px', method: :destory, data: { confirm: 'Are you sure?' } %>
+ 
   </p>
 </div>
 
