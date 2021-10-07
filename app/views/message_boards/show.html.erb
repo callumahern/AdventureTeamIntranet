@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Attachment:</strong>
+  <%= @message_board.attachment %>
+</p>
+
+<p>
+  <strong>Content:</strong>
+  <%= @message_board.content %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @message_board.user_id %>
+</p>
+
+<%= link_to 'Edit', edit_message_board_path(@message_board) %> |
+<%= link_to 'Back', message_boards_path %>

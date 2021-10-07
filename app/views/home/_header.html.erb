@@ -18,9 +18,21 @@
         <li class="nav-item">
           <a class="nav-link" href="#">Message Board</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Log In</a>
-        </li>
+        <% if member_signed_in? %>
+          <li class="nav-item">
+            <%= link_to 'Sign Out', destroy_member_session_path, class: 'nav-link' %>
+          </li>
+          <li class="nav-item">
+            <%= link_to 'Edit Profile', edit_member_registration_path, class: 'nav-link' %>
+          </li>
+        <% else %>
+          <li class="nav-item">
+            <%= link_to 'Log In', new_member_session_path, class: 'nav-link' %>
+          </li>
+          <li class="nav-item">
+            <%= link_to 'Sign Up', new_member_registration_path, class: 'nav-link' %>
+          </li>
+        <% end %>
       </ul>
       <form class="d-flex">
         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">

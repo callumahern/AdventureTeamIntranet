@@ -13,7 +13,20 @@
   <body>
       <%= render 'home/header' %>
       <div class="container">
-        <%= yield %>
+      <% if notice %>
+        <p class="alert alert-success"><%= notice %></p>
+       <% end %>
+      <% if alert %>
+        <p class="alert alert-danger"><%= alert %></p>
+      <% end %>
+
+      <p class="navbar-text float-right">
+      <% if member_signed_in? %>
+        Logged in as <strong><%= current_member.name %></strong>.
+      <% else %>
+      <% end %>
+      </p>
+      <%= yield %>
     </div>  
   </body>
 </html>

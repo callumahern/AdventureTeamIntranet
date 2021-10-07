@@ -1,10 +1,11 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
-<p id="notice"><%= notice %></p>
 
 <div class="jumbotron">
   <h1 class="display-4" style="display: inline"><%= @member.name %> </h1>
-  <%= image_tag @member.image, style: 'width: 150px; margin-left: 600px' %>
+  <% if @member.image.attached? %>
+    <%= image_tag @member.image, style: 'width: 150px; margin-left: 600px' %>
+  <% end %>
   <hr class="my-4">
   <p class="lead"> <%= @member.email %> | <%= @member.role %> | <%= @member.phone %> </p>
   <p class="lead">
