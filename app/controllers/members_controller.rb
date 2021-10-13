@@ -3,15 +3,18 @@ class MembersController < ApplicationController
 
   # GET /members or /members.json
   def index
+    puts 'hello!'
     @members = Member.all
   end
 
   # GET /members/1 or /members/1.json
   def show
+    puts 'Welcome to the show'
   end
 
   # GET /members/new
   def new
+    puts 'This is the new bit!!'
     @member = Member.new
   end
 
@@ -48,7 +51,8 @@ class MembersController < ApplicationController
   end
 
   # DELETE /members/1 or /members/1.json
-  def destroy
+  def destory
+    binding.pry
     @member.destroy
     respond_to do |format|
       format.html { redirect_to members_url, notice: "Member was successfully destroyed." }

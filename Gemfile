@@ -14,7 +14,9 @@ gem 'aws-sdk-s3', require: false
 gem 'jquery-rails'
 gem 'pry'
 gem 'devise'
-
+gem 'stream_rails'
+gem 'devise'
+gem 'bootstrap-sass'
 
 gem 'bootsnap', '>= 1.4.4', require: false
 
