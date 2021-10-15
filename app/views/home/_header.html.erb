@@ -16,7 +16,7 @@
           <%= link_to 'Meet The Team', members_path, class: 'nav-link' %>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Message Board</a>
+          <%= link_to 'Message Board', messages_path, class: 'nav-link' %>
         </li>
         <% if member_signed_in? %>
           <li class="nav-item">
