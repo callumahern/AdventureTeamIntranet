@@ -11,26 +11,32 @@ class MessagesController < ApplicationController
 	end
 
 	def new
-    	@message = Message.new
+    	@message = current_member.messages.build
 	end
 
 	def create
-		@message = Message.new(message_params)
+		@message = current_member.messages.build(message_params)
 		if @message.save
 			redirect_to root_path
 		else
-			render 'new'
+			render 'new' 
 		end
 	end
 
-	def edit
-		@message 
+	def edit  
 	end
 
 	def update
+		if @message.update(message_params)
+			redirect_to message_path
+		else
+			render 'edit'
+		end
 	end
 
 	def destroy
+		@message.destroy
+		redirect_to message_path
 	end
 
 	private

@@ -1,3 +1,14 @@
+@import url(http://fonts.googleapis.com/css?family=Playfair+Display|Muli:300,400);
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+/* General styles */
+
+body {
+	background-color: #fff;
+	font-family: 'Playfair Display', serif;
+}
+
 h1, h2, h3, h4, h5, h6 {
 	font-family: 'Muli', sans-serif;
 	font-weight: 300;	
@@ -27,6 +38,9 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Navbar styles */
 
+.navbar {
+	font-family: 'Muli', sans-serif;
+}
 
 .navbar-default {
 

@@ -1,5 +1,20 @@
 <h1>Hi!</h1>
 
 <h2><%= @message.title %></h2>
+<p>Posted by <%= @message.member.email %> <%= time_ago_in_words(@message.created_at) %> ago</p>
 <p><%= @message.description %></p>
-<%= link_to "Edit", edit_message_path(@message), class: 'btn btn-dark' %>
+
+<h4>Comments:</h4>
+<%= render @message.comments %>
+
+<h4>Reply to Message</h4>
+<%= render 'comments/form' %>
+
+<%= link_to "Back", messages_path, class: 'btn btn-secondary' %>
+<% if member_signed_in? %>
+	<% if @message.member_id == current_member.id %>
+		<%= link_to "Edit", edit_message_path(@message), class: 'btn btn-dark' %>
+		<%= link_to "Delete", message_path(@message), method: :destroy, data: { confirm: "Are you sure?"}, class: 'btn btn-danger' %>
+	<% end %>
+<% end %>
+

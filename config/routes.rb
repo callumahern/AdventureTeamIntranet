@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
-  resources :messages
+
+  resources :messages do
+    resources :comments
+  end
   devise_for :members do
     get "/members/sign_out" => "devise/sessions#destroy"
   end  

@@ -1,0 +1,9 @@
+<%= comment.content %>
+<p>Posted by <%= comment.member.email %> <%= time_ago_in_words(comment.created_at) %> ago</p>
+
+<% if member_signed_in? %>
+  <% if comment.member_id == current_member.id %>
+		<%= link_to "Edit", edit_message_comment_path(comment.message, comment) %>
+		<%= link_to "Delete", message_comment_path(comment.message, comment), method: :delete %>
+	<% end %>
+<% end %>
